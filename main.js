@@ -1,13 +1,14 @@
 "use strict";
 
 const howMany = function () {
-    let choice = parseInt(prompt("How often should be won?"))
+    let choice = parseInt(prompt("How often shoulb either you or the computer win for it to be over?"))
     return choice
 } 
 
 function computerPlay() {
     let pick;
     let zahl = Math.floor(Math.random() * 3); 
+    
     if (zahl === 0) {
         pick = "rock";
     } else if (zahl === 1) {
@@ -23,6 +24,7 @@ function playRound() {
     let pickComputer = computerPlay();
     let auswahl = prompt("Rock, Paper, Scissors? ")
     let hand = auswahl.toLowerCase();
+
     if (pickComputer === hand) {
         ergebnis = 0;
         return ergebnis
@@ -52,6 +54,7 @@ function game() {
     let computer = 0;
     let ergebnis;
     const choice = howMany();
+
     while (self < choice && computer < choice) {
         ergebnis = playRound();
         if (ergebnis === 1){
@@ -66,6 +69,7 @@ function game() {
         console.log("Wrong input. Please choose between rock, paper or scissors!");
         }
     }
+
     if (self === choice) {
         console.log("You won with " + String(self) + " points. The game is over!");
     } else if (computer === choice) {
