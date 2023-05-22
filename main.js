@@ -1,7 +1,7 @@
 "use strict";
 
 const howMany = function () {
-    let choice = parseInt(prompt("How often shoulb either you or the computer win for it to be over?"))
+    let choice = parseInt(prompt("How often should either you or the computer win for it to be over?"))
     return choice
 } 
 
