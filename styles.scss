@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+  text-align: center;
+  height: 100px;
+  line-height: 100px;
+  background-color: green;
+  color: black;
+}
+
+#roundCounter {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 50px 35vw;
+  padding: 30px;
+  background-color: skyblue;
+  font-weight: bold;
+  justify-items: center;
+  height: 180px;
+  font-size: 1.5em;
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.75);
+}
+
+#symbols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 50px 25vw;
+  padding: 30px;
+  place-items: center;
+  height: 150px;
+  font-size: 5em;
+}
+
+#roundText {
+  margin: 50px 35vw;
+  background-color: skyblue;
+  height: 150px;
+  line-height: 150px;
+  font-weight: bold;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 1.5em;
+  box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.75);
+}
