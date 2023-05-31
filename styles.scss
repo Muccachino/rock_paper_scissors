@@ -3,12 +3,15 @@
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
 }
+body {
+  background-color: antiquewhite;
+}
 
 header {
   text-align: center;
   height: 100px;
   line-height: 100px;
-  background-color: mediumseagreen;
+  background-color: goldenrod;
   color: black;
 }
 
@@ -45,6 +48,9 @@ header {
   place-items: center;
   height: 150px;
   font-size: 5em;
+  i:hover {
+    color: goldenrod;
+  }
 }
 
 #roundText {
@@ -57,4 +63,15 @@ header {
   text-align: center;
   font-size: 1.5em;
   box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.75);
+}
+#reset {
+  display: flex;
+  justify-content: center;
+  #resetButton {
+    height: 50px;
+    width: 100px;
+    font-weight: bold;
+    font-size: 1em;
+    background-color: goldenrod;
+  }
 }

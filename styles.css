@@ -5,11 +5,15 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+body {
+  background-color: antiquewhite;
+}
+
 header {
   text-align: center;
   height: 100px;
   line-height: 100px;
-  background-color: mediumseagreen;
+  background-color: goldenrod;
   color: black;
 }
 
@@ -49,6 +53,9 @@ header {
   height: 150px;
   font-size: 5em;
 }
+#symbols i:hover {
+  color: goldenrod;
+}
 
 #roundText {
   margin: 50px 35vw;
@@ -61,4 +68,20 @@ header {
   font-size: 1.5em;
   -webkit-box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.75);
           box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.75);
+}
+
+#reset {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+#reset #resetButton {
+  height: 50px;
+  width: 100px;
+  font-weight: bold;
+  font-size: 1em;
+  background-color: goldenrod;
 }/*# sourceMappingURL=styles.css.map */

@@ -16,6 +16,8 @@ let playerRoundChoice = document.getElementById("playerRoundChoice");
 let miniRock = '<i class="fa-regular fa-hand-back-fist"></i>';
 let miniPaper = '<i class="fa-regular fa-hand"></i>';
 let miniScissors = '<i class="fa-regular fa-hand-scissors"></i>';
+let reset = document.getElementById("resetButton");
+reset.addEventListener("click", newGame);
 
 function computerPlay() {
   let pick;
@@ -99,4 +101,15 @@ function game(playerChoice) {
     roundText.innerHTML = "You lose! <br>" + self + " to " + computer;
     roundText.style.backgroundColor = "gray";
   }
+}
+
+function newGame() {
+  self = 0;
+  playerCounter.innerHTML = self;
+  computer = 0;
+  computerCounter.innerHTML = computer;
+  playerRoundChoice.innerHTML = "";
+  computerRoundChoice.innerHTML = "";
+  roundText.innerHTML = "Welcome";
+  roundText.style.backgroundColor = "skyblue";
 }
