@@ -82,11 +82,11 @@ function game(playerChoice) {
   let ergebnis;
 
   ergebnis = playRound(playerChoice);
-  if (ergebnis === 1) {
+  if (ergebnis === 1 && self < 5 && computer < 5) {
     self++;
     playerCounter.innerHTML = self;
     roundText.style.backgroundColor = "green";
-  } else if (ergebnis === 2) {
+  } else if (ergebnis === 2 && computer < 5 && self < 5) {
     computer++;
     computerCounter.innerHTML = computer;
     roundText.style.backgroundColor = "red";

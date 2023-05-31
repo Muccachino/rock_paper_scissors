@@ -3,24 +3,28 @@
 A JavaScript of rock, paper, scissors.
 
 ```
-const howMany = function ()
-```
-Gives a promt to decide how often either you or the computer has to win before the game is over.
-
-```
 function computerPlay()
 ```
-The computer is given a random Number from 0 to 2, which corrolate 
+
+The computer is given a random Number from 0 to 2, which correlates
 with either rock, paper or scissors.
 
 ```
 function playRound()
 ```
-Checks the input againt the computer generated one.
+
+Checks the players choice against the computer generated one.
 Gives a parameter between 0 and 2, to see who one or if it is a draw.
 
 ```
 function game()
 ```
-Uses the results of the previous functions to determinate a winner.
-The result appears in the console.
+
+Uses the results of the previous functions to determine a winner.
+The results will be shown in the lower section.
+
+```
+function newGame()
+```
+
+This function resets the game, when you click on the reset button at the bottom.
