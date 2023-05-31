@@ -1,9 +1,5 @@
 "use strict";
 
-/*const howMany = function () {
-    let choice = parseInt(prompt("How often should either you or the computer win for it to be over?"))
-    return choice
-} */
 let self = 0;
 let computer = 0;
 let rock = document.getElementById("rockSymbol");
@@ -15,6 +11,11 @@ scissors.addEventListener("click", game.bind(null, "scissors"));
 let roundText = document.getElementById("roundText");
 let playerCounter = document.getElementById("playerCounter");
 let computerCounter = document.getElementById("computerCounter");
+let computerRoundChoice = document.getElementById("computerRoundChoice");
+let playerRoundChoice = document.getElementById("playerRoundChoice");
+let miniRock = '<i class="fa-regular fa-hand-back-fist"></i>';
+let miniPaper = '<i class="fa-regular fa-hand"></i>';
+let miniScissors = '<i class="fa-regular fa-hand-scissors"></i>';
 
 function computerPlay() {
   let pick;
@@ -22,22 +23,31 @@ function computerPlay() {
 
   if (zahl === 0) {
     pick = "rock";
+    computerRoundChoice.innerHTML = miniRock;
   } else if (zahl === 1) {
     pick = "paper";
+    computerRoundChoice.innerHTML = miniPaper;
   } else if (zahl === 2) {
     pick = "scissors";
+    computerRoundChoice.innerHTML = miniScissors;
   }
   return pick;
 }
 
 function playRound(playerChoice) {
+  if (playerChoice === "rock") {
+    playerRoundChoice.innerHTML = miniRock;
+  } else if (playerChoice === "paper") {
+    playerRoundChoice.innerHTML = miniPaper;
+  } else if (playerChoice === "scissors") {
+    playerRoundChoice.innerHTML = miniScissors;
+  }
   let ergebnis;
   let pickComputer = computerPlay();
-  console.log(pickComputer);
 
   if (pickComputer === playerChoice) {
     ergebnis = 0;
-    roundText.innerHTML = "It's a Draw! <br> Play again.";
+    roundText.innerHTML = "It's a Draw!";
     return ergebnis;
   } else if (pickComputer === "rock" && playerChoice === "paper") {
     ergebnis = 1;
@@ -68,30 +78,25 @@ function playRound(playerChoice) {
 
 function game(playerChoice) {
   let ergebnis;
-  /*const choice = howMany();*/
 
   ergebnis = playRound(playerChoice);
   if (ergebnis === 1) {
     self++;
     playerCounter.innerHTML = self;
-    console.log("You win this time!");
+    roundText.style.backgroundColor = "green";
   } else if (ergebnis === 2) {
     computer++;
     computerCounter.innerHTML = computer;
-    console.log("This time the computer wins!");
+    roundText.style.backgroundColor = "red";
   } else if (ergebnis === 0) {
-    console.log("It's a Draw!\nPlay again.");
+    roundText.style.backgroundColor = "skyblue";
   }
 
   if (self === 5) {
-    console.log("You won with " + String(self) + " points. The game is over!");
     roundText.innerHTML = "You win! <br>" + self + " to " + computer;
+    roundText.style.backgroundColor = "gold";
   } else if (computer === 5) {
-    console.log(
-      "You lost! The computer won with " +
-        String(computer) +
-        " points. The game is over!"
-    );
-    roundText.innerHTML = "You lose! <br>" + computer + " to " + self;
+    roundText.innerHTML = "You lose! <br>" + self + " to " + computer;
+    roundText.style.backgroundColor = "gray";
   }
 }
